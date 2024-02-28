@@ -13,3 +13,15 @@ $DarkBlue: hsl(218, 23%, 16%);
 $Font: "Manrope", sans-serif;
 $FontSize: 28px;
 $FontWeight: 800;
+
+@mixin Flex ($justify, $align, $direction: row,) {
+   display: flex;
+   flex-direction: $direction;
+   justify-content: $justify;
+   align-items: $align;
+}
+
+@mixin FontType ($size, $weight) {
+   font-size: $size;
+   font-weight: $weight;
+}

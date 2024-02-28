@@ -1,0 +1,30 @@
+@import "varibles";
+
+.main-container {
+   position: relative;
+   width: 100%;
+   padding: 1.5rem .5rem;
+   border-radius: 15px;
+   background-color: $DarkGrayishBlue;
+   @include Flex (center, center);
+}
+
+.main {
+   width: 100%;
+   padding: 1rem;
+   @include Flex (center, center, column);
+
+   &__head, &__quotes {
+      height: 50px;
+      border: 1px solid blueviolet;
+   }
+}
+
+.dice-container {
+   position: absolute;
+   bottom: 0;
+   padding: 1rem;
+   border-radius: 100%;
+   background-color: $NeonGreen;
+   transform: translateY(50%);
+}
