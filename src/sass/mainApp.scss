@@ -2,7 +2,7 @@
 
 .main-container {
    position: relative;
-   width: 100%;
+   width: clamp(375px, 50%, 480px);
    padding: 0 .5rem 1.5rem .5rem;
    border-radius: 15px;
    background-color: $DarkGrayishBlue;
@@ -10,10 +10,11 @@
 }
 
 .main {
+   @include Flex (center, center, column);
    width: 100%;
    padding: 1rem;
-   @include Flex (center, center, column);
    font-family: $Font;
+   text-align: center;
 
    &__head {
       @include FontType (12px, 500);
