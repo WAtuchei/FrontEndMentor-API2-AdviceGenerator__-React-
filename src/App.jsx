@@ -12,17 +12,18 @@ function App() {
             ADVICE #117
           </h1>
         </header>
-
+      {/* quotes block */}
         <article className="main__quotes">
           <p>
             {`"Some quotes here"`}
           </p>
         </article>
-
+      {/* divide line */}
         <div className="main__divider">
           <img src="../images/pattern-divider-mobile.svg" alt="divider-line" />          
         </div>        
       </main>
+      {/* dice */}
       <div className='dice-container'>
         <img src="../images/icon-dice.svg" alt="dice" />
       </div>
