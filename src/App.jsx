@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 import './sass/mainApp.scss'
@@ -6,6 +6,16 @@ import './sass/mainApp.scss'
 function App() {
   const [advice, setAdvie] = useState('')
   const [quote, setQuote] = useState('')
+  const [dividerImg, setDividerImg] = useState('../images/pattern-divider-mobile.svg')
+
+  const divideImg = () => {
+    if ( window.innerWidth >= 900 ) {
+      setDividerImg('../images/pattern-divider-desktop.svg')
+    }
+    else {
+      setDividerImg('../images/pattern-divider-mobile.svg')
+    }
+  }
 
   const randomQuote = () => {
     axios.get('https://api.adviceslip.com/advice')
@@ -15,6 +25,10 @@ function App() {
       setQuote(data.advice)
     })
   }
+
+  useEffect(() => {
+    window.addEventListener('resize', divideImg)
+  },[])
 
   return (
     <div className='main-container'>
@@ -40,7 +54,7 @@ function App() {
 
       {/* divide line */}
         <div className="main__divider">
-          <img src="../images/pattern-divider-mobile.svg" alt="divider-line" />          
+          <img src={dividerImg} alt="divider-line" />          
         </div>        
       </main>
       {/* dice */}
